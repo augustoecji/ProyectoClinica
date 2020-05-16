@@ -117,34 +117,28 @@ function deleteTableData() {
 function eliminarCita() {
         var cedulaBusqueda = document.getElementById("deleteCedula").value;
         var horaBuscada = document.getElementById("deleteHora").value;
-        var tableBodyCitas = document.getElementById("tableBody");
+
 
 
         //El uso de la funcion MAP nos permite recorrer un array para que luego nos devuelve un array
         registroCitas.map((cita) => {
 
-                console.log("cedula buscada es" + cita.cedula);
-                console.log("cedula ingresada es" + cedulaBusqueda);
-                console.log("hora buscada es" + cita.hora);
-                console.log("hora ingresado es" + horaBuscada);
-          
+
                 if (cita.cedula === cedulaBusqueda && cita.hora === horaBuscada) {
 
+//para cada elemento dentro del objeto, se borra si cumple la condicion.
+                        for (citaInfo in cita) {
+                                delete cita[citaInfo];
 
-                        // la funcion in nos permite agilizar el uso del for para capaturar los valores dentro del objeto cita
-                       
-                        tableBodyCitas.removeChild(tablerow);
-                            
-                        console.log("se borro")
+                        }
+
+                        alert("Borrado exitosamente");
 
 
-
-                } else {
-                        console.log("no se borro nada")
-                       // alert("no se encontro una cita registrada con el numero de cedula ingresado");
 
                 }
         })
+        console.log(registroCitas);
 }
 /*!
     * Start Bootstrap - Freelancer v6.0.1 (https://startbootstrap.com/themes/freelancer)
@@ -153,7 +147,7 @@ function eliminarCita() {
     */
    (function($) {
         "use strict"; // Start of use strict
-      
+
         // Smooth scrolling using jQuery easing
         $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
           if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -167,7 +161,7 @@ function eliminarCita() {
             }
           }
         });
-      
+
         // Scroll to top button appear
         $(document).scroll(function() {
           var scrollDistance = $(this).scrollTop();
@@ -177,18 +171,18 @@ function eliminarCita() {
             $('.scroll-to-top').fadeOut();
           }
         });
-      
+
         // Closes responsive menu when a scroll trigger link is clicked
         $('.js-scroll-trigger').click(function() {
           $('.navbar-collapse').collapse('hide');
         });
-      
+
         // Activate scrollspy to add active class to navbar items on scroll
         $('body').scrollspy({
           target: '#mainNav',
           offset: 80
         });
-      
+
         // Collapse Navbar
         var navbarCollapse = function() {
           if ($("#mainNav").offset().top > 100) {
@@ -201,7 +195,7 @@ function eliminarCita() {
         navbarCollapse();
         // Collapse the navbar when page is scrolled
         $(window).scroll(navbarCollapse);
-      
+
         // Floating label headings for the contact form
         $(function() {
           $("body").on("input propertychange", ".floating-label-form-group", function(e) {
@@ -212,6 +206,5 @@ function eliminarCita() {
             $(this).removeClass("floating-label-form-group-with-focus");
           });
         });
-      
+
       })(jQuery); // End of use strict
-  
