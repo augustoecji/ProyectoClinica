@@ -1,15 +1,18 @@
-@charset "UTF-8";
-/*!
-* Start Bootstrap - Freelancer v6.0.1 (https://startbootstrap.com/themes/freelancer)
-* Copyright 2013-2020 Start Bootstrap
-* Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-freelancer/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -479,7 +482,7 @@ mark,
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+  height: 250px;
 }
 
 .img-thumbnail {
@@ -10213,3 +10216,4 @@ form .row:first-child .floating-label-form-group {
 .copyright {
   background-color: #1a252f;
 }
+
